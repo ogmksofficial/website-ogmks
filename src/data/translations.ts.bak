@@ -1,0 +1,79 @@
+export type Language = "PT" | "EN" | "ES";
+
+export const translations = {
+  PT: {
+    nav: {
+      home: "HOME",
+      about: "SOBRE",
+      releases: "LANÇAMENTOS",
+      clips: "CLIPES",
+      agenda: "AGENDA",
+      merch: "MERCH",
+      presskit: "PRESSKIT",
+      contact: "CONTATO",
+    },
+    hero: {
+      tagline: "RAP · TRAP · DRILL · LIFESTYLE",
+      ctaShow: "CONTRATE O SHOW",
+      ctaRelease: "ÚLTIMO LANÇAMENTO",
+    },
+    about: {
+      title: "QUEM É OG.MKS?",
+      subtitle: "A VIVÊNCIA PERIFÉRICA EM FORMA DE SOM!",
+      p1: "Com mais de 50 mil acessos nas plataformas digitais e dezenas de lançamentos na pista, OG.MKS é a prova de que o underground paulistano ainda tem muita força.",
+      p2: "Nascido no Jardim Brasil, carrega a bagagem de quem já dividiu palco em centros culturais de peso, como o CCJ e a Casa de Cultura Brasilândia, além de colar no Circuito de Rua.",
+      p3: 'Entre faixas como "Clack Clack" e "Os Menor do Momento", o som é um retrato cru da vivência periférica.',
+      ctaShow: "CONTRATE O SHOW",
+    },
+  },
+  EN: {
+    nav: {
+      home: "HOME",
+      about: "ABOUT",
+      releases: "RELEASES",
+      clips: "CLIPS",
+      agenda: "TOUR",
+      merch: "MERCH",
+      presskit: "PRESSKIT",
+      contact: "CONTACT",
+    },
+    hero: {
+      tagline: "RAP · TRAP · DRILL · LIFESTYLE",
+      ctaShow: "BOOK A SHOW",
+      ctaRelease: "LATEST RELEASE",
+    },
+    about: {
+      title: "WHO IS OG.MKS?",
+      subtitle: "THE RAW HOOD EXPERIENCE SHAPED INTO SOUND!",
+      p1: "With over 50,000 streams across digital platforms and dozens of street releases, OG.MKS is living proof that São Paulo's underground scene hits harder than ever.",
+      p2: "Born and raised in Jardim Brasil, he brings the grit of an artist who's rocked heavyweight cultural stages like CCJ and Casa de Cultura Brasilândia, with deep roots in the street circuit.",
+      p3: 'Through tracks like "Clack Clack" and "Os Menor do Momento", his sound delivers an unfiltered snapshot of peripheral street life.',
+      ctaShow: "BOOK A SHOW",
+    },
+  },
+  ES: {
+    nav: {
+      home: "INICIO",
+      about: "SOBRE",
+      releases: "LANZAMIENTOS",
+      clips: "VIDEOS",
+      agenda: "AGENDA",
+      merch: "MERCH",
+      presskit: "PRESSKIT",
+      contact: "CONTACTO",
+    },
+    hero: {
+      tagline: "RAP · TRAP · DRILL · LIFESTYLE",
+      ctaShow: "CONTRATAR SHOW",
+      ctaRelease: "ÚLTIMO LANZAMIENTO",
+    },
+    about: {
+      title: "¿QUIÉN ES OG.MKS?",
+      subtitle: "¡LA VIVENCIA PERIFÉRICA EN FORMA DE SONIDO!",
+      p1: "Con más de 50 mil reproducciones en plataformas digitales y decenas de lanzamientos en la calle, OG.MKS es la prueba de que el underground paulista sigue más fuerte que nunca.",
+      p2: "Nacido en Jardim Brasil, carga la experiencia de quien ya compartió escenario en centros culturales de peso, como el CCJ y la Casa de Cultura Brasilândia, además de romperla en el circuito callejero.",
+      p3: 'Entre temas como "Clack Clack" y "Os Menor do Momento", su sonido es un retrato crudo de la vivencia periférica.',
+      ctaShow: "CONTRATAR SHOW",
+    },
+  },
+};
