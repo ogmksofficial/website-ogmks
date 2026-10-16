@@ -18,9 +18,9 @@ export default function Home() {
   const [currentLang, setCurrentLang] = useState<Language>("PT");
 
   return (
-    <main className="relative min-h-screen bg-black text-white selection:bg-red-800 selection:text-white overflow-x-hidden">
-      {/* BACKGROUND GLOBAL FIXO DO SITE (Textura Asfalto/Street) */}
-      <div className="fixed inset-0 z-0 pointer-events-none select-none">
+    <main className="relative min-h-screen w-full bg-black text-white selection:bg-red-800 selection:text-white overflow-x-clip">
+      {/* BACKGROUND GLOBAL FIXO DO SITE */}
+      <div className="fixed inset-0 z-0 pointer-events-none select-none w-full h-full overflow-hidden">
         <Image
           src="/assets/images/bg-og-mks-home.webp"
           alt="OG.MK$ Background Texture"
@@ -29,12 +29,12 @@ export default function Home() {
           quality={90}
           className="object-cover object-center opacity-40"
         />
-        {/* Vinheta cinematográfica que dá legibilidade sem matar a textura */}
+        {/* Vinheta cinematográfica */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/40 to-black/40" />
       </div>
 
-      {/* CONTEÚDO E SEÇÕES SOBREPOSTAS */}
-      <div className="relative z-10">
+      {/* CONTEÚDO E SEÇÕES SOBREPOSTAS (FLUXO VERTICAL RÍGIDO) */}
+      <div className="relative z-10 flex flex-col w-full min-h-screen">
         <Navbar currentLang={currentLang} onLanguageChange={setCurrentLang} />
         <HeroSection currentLang={currentLang} />
         <AboutSection currentLang={currentLang} />

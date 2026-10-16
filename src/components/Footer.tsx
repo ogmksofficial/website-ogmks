@@ -97,12 +97,10 @@ export default function Footer({ currentLang = "PT" }: FooterProps) {
 
   return (
     <MotionConfig reducedMotion="user">
-      <footer className="relative w-full bg-zinc-950/90 text-white">
-        
+      <footer className="w-full bg-zinc-950/90 text-white mt-auto block">
         {/* BLOCO PRINCIPAL DO FOOTER */}
-        <div className="mx-auto flex w-full max-w-[1450px] flex-col gap-12 px-4 py-16 sm:px-8 sm:py-20 lg:py-20 xl:px-8">
-          
-          <div className="grid grid-cols-1 items-stretch gap-12 lg:grid-cols-[442px_1fr_400px] lg:gap-16">
+        <div className="mx-auto flex w-full max-w-[1450px] flex-col gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+          <div className="grid grid-cols-1 items-stretch gap-10 lg:grid-cols-[360px_1fr_340px] xl:grid-cols-[420px_1fr_380px] lg:gap-10 xl:gap-14">
             
             {/* COLUNA 1: SLOGAN, LOGO OG.MKS & SOCIAL */}
             <motion.div
@@ -110,26 +108,26 @@ export default function Footer({ currentLang = "PT" }: FooterProps) {
               whileInView="show"
               viewport={{ once: true, amount: 0.2 }}
               variants={fadeUp}
-              className="flex flex-col items-center text-center lg:items-start lg:text-left lg:justify-between gap-6"
+              className="flex flex-col items-center text-center lg:items-start lg:text-left lg:justify-between gap-5"
             >
-              <p className="whitespace-pre-line font-metropolis text-2xl font-bold leading-snug text-white lg:text-[32px] lg:leading-[40px] lg:w-[480px]">
+              <p className="whitespace-pre-line font-metropolis text-xl font-bold leading-snug text-white sm:text-2xl lg:text-2xl xl:text-[28px] lg:leading-tight">
                 {t.tagline}
               </p>
 
               {/* LOGO OG.MKS */}
-              <div className="relative h-44 w-52 sm:h-56 sm:w-64 lg:h-[320px] lg:w-[360px] my-2">
+              <div className="relative h-40 w-48 sm:h-48 sm:w-56 lg:h-[260px] lg:w-[300px] xl:h-[290px] xl:w-[330px] my-1">
                 <Image
                   src="/assets/icons/og-mks-logo.webp"
                   alt="OG.MK$ Logo"
                   fill
-                  sizes="(max-width: 1024px) 256px, 360px"
+                  sizes="(max-width: 1024px) 220px, 330px"
                   className="object-contain object-center lg:object-left"
                   priority
                 />
               </div>
 
               {/* REDES SOCIAIS */}
-              <div className="grid grid-cols-4 gap-3 max-w-[280px] sm:max-w-none sm:flex sm:flex-wrap sm:justify-center lg:flex-nowrap lg:justify-start lg:gap-3.5 pt-2">
+              <div className="grid grid-cols-4 gap-2.5 sm:flex sm:flex-wrap sm:justify-center lg:justify-start lg:gap-3 pt-1">
                 {SOCIAL_LINKS.map((item, idx) => {
                   const Icon = item.icon;
                   return (
@@ -139,29 +137,29 @@ export default function Footer({ currentLang = "PT" }: FooterProps) {
                       target="_blank"
                       rel="noreferrer"
                       aria-label={item.label}
-                      className="flex h-11 w-11 items-center justify-center rounded-full border border-white/30 bg-black/50 text-white transition-all duration-300 hover:border-red-600 hover:bg-red-700 hover:scale-110 lg:h-11 lg:w-11"
+                      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/30 bg-black/50 text-white transition-all duration-300 hover:border-red-600 hover:bg-red-700 hover:scale-110 lg:h-10 lg:w-10 xl:h-11 xl:w-11"
                     >
-                      <Icon className="h-5 w-5" />
+                      <Icon className="h-4 w-4 lg:h-4 lg:w-4 xl:h-5 xl:w-5" />
                     </a>
                   );
                 })}
               </div>
             </motion.div>
 
-            {/* COLUNA 2: MENU DE NAVEGAÇÃO CENTRAL (ALINHAMENTO VERTICAL COMPLETO VIA 'justify-between') */}
+            {/* COLUNA 2: MENU DE NAVEGAÇÃO CENTRAL */}
             <motion.div
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.2 }}
               variants={fadeUp}
-              className="hidden lg:flex flex-col items-start justify-between text-left pl-6 h-full py-1"
+              className="hidden lg:flex flex-col items-start justify-between text-left pl-4 lg:pl-6 h-full py-1"
             >
               {NAV_LINKS.map((link, idx) => (
                 <a
                   key={idx}
                   href={link.href}
                   onClick={(e) => handleSmoothScroll(e, link.href)}
-                  className="font-metropolis text-2xl font-bold uppercase tracking-wider text-white transition-colors hover:text-red-600 lg:text-[32px] leading-none"
+                  className="font-metropolis text-xl font-bold uppercase tracking-wider text-white transition-colors hover:text-red-600 lg:text-2xl xl:text-[28px] leading-none"
                 >
                   {link.label}
                 </a>
@@ -174,27 +172,27 @@ export default function Footer({ currentLang = "PT" }: FooterProps) {
               whileInView="show"
               viewport={{ once: true, amount: 0.2 }}
               variants={fadeUp}
-              className="flex flex-col justify-between gap-8 text-center sm:text-left h-full"
+              className="flex flex-col justify-between gap-6 text-center sm:text-left h-full"
             >
               {/* BLOCO DE CONTATO DIRETO */}
-              <div className="flex flex-col gap-3 items-center sm:items-start">
-                <h3 className="font-metropolis text-2xl font-black uppercase tracking-wider text-white lg:text-2xl">
+              <div className="flex flex-col gap-2.5 items-center sm:items-start">
+                <h3 className="font-metropolis text-xl font-black uppercase tracking-wider text-white lg:text-xl xl:text-2xl">
                   {t.contactTitle}
                 </h3>
-                
+
                 <a
                   href="mailto:ogmksofficial@gmail.com"
-                  className="flex items-center gap-3 font-metropolis text-base font-semibold text-white/90 uppercase transition-colors hover:text-red-500 lg:text-base"
+                  className="flex items-center gap-2.5 font-metropolis text-sm font-semibold text-white/90 uppercase transition-colors hover:text-red-500 lg:text-sm xl:text-base"
                 >
-                  <FaEnvelope className="h-5 w-5 shrink-0 text-red-600" />
+                  <FaEnvelope className="h-4 w-4 shrink-0 text-red-600" />
                   <span>ogmksofficial@gmail.com</span>
                 </a>
 
                 <a
                   href="mailto:contatoproducaoponto@gmail.com"
-                  className="flex items-center gap-3 font-metropolis text-base font-semibold text-white/90 uppercase transition-colors hover:text-red-500 lg:text-base"
+                  className="flex items-center gap-2.5 font-metropolis text-sm font-semibold text-white/90 uppercase transition-colors hover:text-red-500 lg:text-sm xl:text-base"
                 >
-                  <FaEnvelope className="h-5 w-5 shrink-0 text-red-600" />
+                  <FaEnvelope className="h-4 w-4 shrink-0 text-red-600" />
                   <span>contatoproducaoponto@gmail.com</span>
                 </a>
 
@@ -202,19 +200,19 @@ export default function Footer({ currentLang = "PT" }: FooterProps) {
                   href={WHATSAPP_MANAGER_URL}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-3 font-metropolis text-base font-semibold text-white/90 transition-colors hover:text-red-500 lg:text-lg"
+                  className="flex items-center gap-2.5 font-metropolis text-sm font-semibold text-white/90 transition-colors hover:text-red-500 lg:text-base xl:text-lg"
                 >
-                  <FaWhatsapp className="h-6 w-6 shrink-0 text-green-500" />
+                  <FaWhatsapp className="h-5 w-5 shrink-0 text-green-500" />
                   <span>Marcos Alexandre — 11 97511-7122</span>
                 </a>
               </div>
 
               {/* BLOCO PONTO PRODUÇÕES & MAPA */}
-              <div className="flex flex-col gap-3 border-t border-white/15 pt-6 items-center sm:items-start">
-                <h3 className="font-metropolis text-2xl font-black uppercase tracking-wider text-white lg:text-2xl">
+              <div className="flex flex-col gap-2.5 border-t border-white/15 pt-5 items-center sm:items-start">
+                <h3 className="font-metropolis text-xl font-black uppercase tracking-wider text-white lg:text-xl xl:text-2xl">
                   {t.prodTitle}
                 </h3>
-                <p className="whitespace-pre-line font-metropolis text-base font-medium text-white/80 lg:text-base">
+                <p className="whitespace-pre-line font-metropolis text-sm font-medium text-white/80 lg:text-sm">
                   {t.prodDesc}
                 </p>
 
@@ -224,7 +222,7 @@ export default function Footer({ currentLang = "PT" }: FooterProps) {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={t.seeMaps}
-                  className="group relative h-28 w-full overflow-hidden rounded-2xl border-2 border-white/20 bg-[#e5e3df] shadow-md transition-transform duration-300 hover:scale-[1.02] lg:h-32"
+                  className="group relative h-24 w-full overflow-hidden rounded-xl border-2 border-white/20 bg-[#e5e3df] shadow-md transition-transform duration-300 hover:scale-[1.01] lg:h-28"
                 >
                   <div className="absolute inset-0 bg-[#e5e3df] opacity-100">
                     <svg className="h-full w-full opacity-60" xmlns="http://www.w3.org/2000/svg">
@@ -240,7 +238,7 @@ export default function Footer({ currentLang = "PT" }: FooterProps) {
 
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="relative flex flex-col items-center">
-                      <FaMapMarkerAlt className="h-8 w-8 text-red-600 drop-shadow-md transition-transform group-hover:scale-125" />
+                      <FaMapMarkerAlt className="h-7 w-7 text-red-600 drop-shadow-md transition-transform group-hover:scale-125" />
                       <span className="mt-1 rounded bg-black/90 px-2 py-0.5 font-metropolis text-[10px] font-bold text-white shadow-lg border border-red-600/40">
                         Ponto Prod
                       </span>
@@ -248,7 +246,7 @@ export default function Footer({ currentLang = "PT" }: FooterProps) {
                   </div>
                 </a>
 
-                <p className="whitespace-pre-line font-metropolis text-sm font-semibold text-white/80 lg:text-sm">
+                <p className="whitespace-pre-line font-metropolis text-xs sm:text-sm font-semibold text-white/80 lg:text-xs xl:text-sm">
                   {t.address}
                 </p>
 
@@ -257,7 +255,7 @@ export default function Footer({ currentLang = "PT" }: FooterProps) {
                     href={GOOGLE_MAPS_URL}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center gap-2 font-metropolis text-xs font-bold text-red-600 underline hover:text-red-500 lg:text-sm"
+                    className="flex items-center gap-1.5 font-metropolis text-xs font-bold text-red-600 underline hover:text-red-500 lg:text-xs xl:text-sm"
                   >
                     <span>{t.seeMaps}</span>
                     <FaArrowRight className="h-3 w-3" />
@@ -267,7 +265,7 @@ export default function Footer({ currentLang = "PT" }: FooterProps) {
                     href="https://instagram.com/pontoprod"
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center gap-1.5 font-metropolis text-xs font-bold text-white hover:text-red-600 transition-colors lg:text-sm"
+                    className="flex items-center gap-1.5 font-metropolis text-xs font-bold text-white hover:text-red-600 transition-colors lg:text-xs xl:text-sm"
                   >
                     <FaInstagram className="h-4 w-4 text-red-600" />
                     <span>@PONTOPROD</span>
@@ -279,9 +277,9 @@ export default function Footer({ currentLang = "PT" }: FooterProps) {
                   href={WHATSAPP_MANAGER_URL}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-3 flex h-16 w-full items-center justify-center gap-3 rounded-xl bg-red-700 font-metropolis text-xl font-black uppercase tracking-wider text-white shadow-xl transition-all hover:bg-red-800 hover:scale-[1.02] active:scale-[0.98]"
+                  className="mt-2 flex h-14 w-full items-center justify-center gap-3 rounded-xl bg-red-700 font-metropolis text-base lg:text-lg font-black uppercase tracking-wider text-white shadow-xl transition-all hover:bg-red-800 hover:scale-[1.01] active:scale-[0.99]"
                 >
-                  <FaWhatsapp className="h-7 w-7 text-white" />
+                  <FaWhatsapp className="h-6 w-6 text-white" />
                   <span>{t.ctaShow}</span>
                 </a>
               </div>
@@ -289,16 +287,14 @@ export default function Footer({ currentLang = "PT" }: FooterProps) {
             </motion.div>
 
           </div>
-
         </div>
 
         {/* BARRA INFERIOR DE COPYRIGHT */}
-        <div className="w-full bg-stone-300 py-6 text-black">
-          <div className="mx-auto max-w-[1450px] px-4 text-center font-metropolis text-xs font-medium leading-relaxed sm:text-sm xl:px-8">
+        <div className="w-full bg-stone-300 py-4 text-black">
+          <div className="mx-auto max-w-[1450px] px-4 text-center font-metropolis text-xs font-medium leading-relaxed sm:text-sm lg:px-8">
             {t.copyright}
           </div>
         </div>
-
       </footer>
     </MotionConfig>
   );
