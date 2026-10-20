@@ -1,10 +1,19 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(request: Request) {
   try {
+    const apiKey = process.env.RESEND_API_KEY;
+
+    if (!apiKey) {
+      console.error("RESEND_API_KEY não configurada nas variáveis de ambiente.");
+      return NextResponse.json(
+        { error: "Erro de configuração no servidor de e-mail." },
+        { status: 500 }
+      );
+    }
+
+    const resend = new Resend(apiKey);
     const { name, email, message } = await request.json();
 
     if (!name || !email || !message) {
@@ -29,7 +38,8 @@ export async function POST(request: Request) {
     });
 
     return NextResponse.json({ success: true, data });
-  } catch {
+  } catch (error) {
+    console.error("Erro ao enviar e-mail via Resend:", error);
     return NextResponse.json(
       { error: "Erro ao enviar e-mail." },
       { status: 500 }
