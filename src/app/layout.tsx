@@ -35,7 +35,10 @@ const metropolis = localFont({
   variable: "--font-metropolis-src",
 });
 
+const SITE_URL = "https://website-ogmks.vercel.app";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "OG.MK$ | Trap, Drill & Lifestyle",
   description: "A vivência periférica em forma de som. Do Jardim Brasil pro mundo!",
   icons: {
@@ -46,11 +49,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "OG.MK$ | Trap, Drill & Lifestyle",
     description: "A vivência periférica em forma de som. Do Jardim Brasil pro mundo!",
-    url: "https://ogmks.com.br",
+    url: SITE_URL,
     siteName: "OG.MK$",
     images: [
       {
-        url: "/assets/images/herosection-photo-mks.webp",
+        url: `${SITE_URL}/assets/icons/hero-whatsapp-image-og-mks.png`,
         width: 1200,
         height: 630,
         alt: "OG.MK$ | Trap, Drill & Lifestyle",
@@ -63,7 +66,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "OG.MK$ | Trap, Drill & Lifestyle",
     description: "A vivência periférica em forma de som. Do Jardim Brasil pro mundo!",
-    images: ["/assets/images/herosection-photo-mks.webp"],
+    images: [`${SITE_URL}/assets/icons/hero-whatsapp-image-og-mks.png`],
   },
 };
 
