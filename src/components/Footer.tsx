@@ -69,13 +69,14 @@ export default function Footer({ currentLang = "PT" }: FooterProps) {
   ];
 
   const NAV_LINKS = [
-    { label: nav.home, href: "#hero" },
-    { label: nav.about, href: "#about" },
-    { label: nav.releases, href: "#release" },
-    { label: nav.clips, href: "#videos" },
-    { label: nav.presskit, href: "#presskit" },
+    { label: nav.home, href: "#home" },
+    { label: nav.about, href: "#sobre" },
+    { label: nav.releases, href: "#lancamentos" },
+    { label: nav.clips, href: "#clipes" },
+    { label: nav.agenda, href: "#agenda" },
     { label: nav.merch, href: "#merch" },
-    { label: nav.contact, href: "#contact" },
+    { label: nav.presskit, href: "#presskit" },
+    { label: nav.contact, href: "#contato" },
   ];
 
   const GOOGLE_MAPS_URL =
@@ -90,7 +91,14 @@ export default function Footer({ currentLang = "PT" }: FooterProps) {
       const targetId = href.replace("#", "");
       const elem = document.getElementById(targetId);
       if (elem) {
-        elem.scrollIntoView({ behavior: "smooth" });
+        const headerOffset = 80;
+        const elementPosition = elem.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
       }
     }
   };
@@ -292,7 +300,16 @@ export default function Footer({ currentLang = "PT" }: FooterProps) {
         {/* BARRA INFERIOR DE COPYRIGHT */}
         <div className="w-full bg-stone-300 py-4 text-black">
           <div className="mx-auto max-w-[1450px] px-4 text-center font-metropolis text-xs font-medium leading-relaxed sm:text-sm lg:px-8">
-            {t.copyright}
+            © 2026 OG.MK$ | Todos os direitos reservados | Developed by{" "}
+            <a
+              href="https://www.abnersimao.com.br/"
+              target="_blank"
+              rel="noreferrer"
+              className="font-bold underline hover:text-red-700 transition-colors"
+            >
+              Abner Simão Design
+            </a>{" "}
+            | Política de privacidade | Termos de uso.
           </div>
         </div>
       </footer>

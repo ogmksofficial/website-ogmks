@@ -11,7 +11,7 @@ import {
   animate,
   useInView,
 } from "framer-motion";
-import { FaDownload, FaVideo } from "react-icons/fa";
+import { FaDownload } from "react-icons/fa";
 import { translations, Language } from "@/data/translations";
 
 interface PresskitSectionProps {
@@ -99,7 +99,7 @@ export default function PresskitSection({ currentLang = "PT" }: PresskitSectionP
     stat1Label: "REPRODUÇÕES TOTAIS",
     stat2Num: "30+",
     stat2Label: "MÚSICAS LANÇADAS",
-    stat3Num: "6+",
+    stat3Num: "29+",
     stat3Label: "PALCOS CULTURAIS",
     btnPresskit: "BAIXAR PRESS KIT",
     btnPhotos: "BAIXAR FOTOS",
@@ -110,25 +110,25 @@ export default function PresskitSection({ currentLang = "PT" }: PresskitSectionP
   const DOWNLOAD_LINKS = [
     {
       label: t.btnPresskit,
-      href: "/assets/ogmks-clipping-atualizadocompressed.pdf",
+      href: "https://drive.google.com/drive/folders/1vdu-3KJgO2V6nVQ5WxAibomBA50RSaZj?usp=drive_link",
       icon: FaDownload,
       isExternal: true,
     },
     {
       label: t.btnPhotos,
-      href: "/assets/images/presskit-photo-mks.webp",
+      href: "https://drive.google.com/drive/folders/1hvQ_8dMFXd1YrrlhKj2P3E5t9UrA8T2m?usp=drive_link",
       icon: FaDownload,
       isExternal: true,
     },
     {
       label: t.btnLogo,
-      href: "/assets/icons/og-mks-logo.webp",
+      href: "https://drive.google.com/drive/folders/1X-6fuWwWDqjgVPg922alx8Y3kmaggklu?usp=drive_link",
       icon: FaDownload,
       isExternal: true,
     },
     {
       label: t.btnVideos,
-      href: "/assets/videos-reels-ogmks.zip",
+      href: "https://drive.google.com/drive/folders/1anrRFmQumO89j8JUjYlbU8bVaqOp_lEt?usp=drive_link",
       icon: FaDownload,
       isExternal: true,
     },

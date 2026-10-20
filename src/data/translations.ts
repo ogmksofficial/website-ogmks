@@ -25,10 +25,10 @@ export const translations = {
     },
     about: {
       title: "QUEM É OG.MKS?",
-      subtitle: "A VIVÊNCIA PERIFÉRICA EM FORMA DE SOM!",
-      p1: "Com mais de 50 mil acessos nas plataformas digitais e dezenas de lançamentos na pista, OG.MKS é a prova de que o underground paulistano ainda tem muita força.",
-      p2: "Nascido no Jardim Brasil, carrega a bagagem de quem já dividiu palco em centros culturais de peso, como o CCJ e a Casa de Cultura Brasilândia, além de colar no Circuito de Rua.",
-      p3: 'Entre faixas como "Clack Clack" e "Os Menor do Momento", o som é um retrato cru da vivência periférica.',
+      subtitle: "DA ZONA NORTE PARA A CENA DO TRAP NACIONAL!",
+      p1: "OG.MKS é um rapper e compositor independente de São Paulo que transforma vivências, ambição e lifestyle em música. Com lançamentos como “Resumo”, “Refs” e “Faturando”, o artista apresenta uma sonoridade versátil, combinando referências da cultura urbana, autenticidade e atitude.",
+      p2: "Sua trajetória carrega a bagagem de quem já dividiu palco em centros culturais de peso (CCJ, Casa de Cultura Brasilândia), colou no Circuito de Rua e marcou presença na Virada Cultural de São Paulo em 2025, além de parcerias com grandes nomes da cena independente.",
+      p3: "Com um repertório que mistura trap, flows marcantes e a estética crua do asfalto, OG.MKS leva aos palcos a força de suas músicas autorais em um show focado em atitude, identidade e conexão total com o público.",
       ctaShow: "CONTRATE O SHOW",
     },
     videos: {
@@ -63,7 +63,7 @@ export const translations = {
       stat1Label: "REPRODUÇÕES TOTAIS",
       stat2Num: "30+",
       stat2Label: "MÚSICAS LANÇADAS",
-      stat3Num: "6+",
+      stat3Num: "29+",
       stat3Label: "PALCOS CULTURAIS",
       btnPresskit: "BAIXAR PRESS KIT",
       btnPhotos: "BAIXAR FOTOS",
@@ -116,10 +116,10 @@ export const translations = {
     },
     about: {
       title: "WHO IS OG.MKS?",
-      subtitle: "THE RAW HOOD EXPERIENCE SHAPED INTO SOUND!",
-      p1: "With over 50,000 streams across digital platforms and dozens of street releases, OG.MKS is living proof that São Paulo's underground scene hits harder than ever.",
-      p2: "Born and raised in Jardim Brasil, he brings the grit of an artist who's rocked heavyweight cultural stages like CCJ and Casa de Cultura Brasilândia, with deep roots in the street circuit.",
-      p3: 'Through tracks like "Clack Clack" and "Os Menor do Momento", his sound delivers an unfiltered snapshot of peripheral street life.',
+      subtitle: "FROM THE NORTH ZONE TO THE NATIONAL TRAP SCENE!",
+      p1: "OG.MKS is an independent rapper and songwriter from São Paulo who turns real-life stories, ambition, and lifestyle into sound. With releases like “Resumo”, “Refs”, and “Faturando”, he delivers a versatile sonic identity blending street culture, authenticity, and raw attitude.",
+      p2: "His journey carries the weight of rocking major cultural venues (CCJ, Casa de Cultura Brasilândia), tearing up street circuits, and performing live at São Paulo's Virada Cultural in 2025, alongside key collaborations with independent scene artists.",
+      p3: "Combining heavy trap, striking flows, and raw street aesthetics, OG.MKS brings the full power of his original catalog to the stage in a live performance driven by attitude, identity, and pure crowd connection.",
       ctaShow: "BOOK A SHOW",
     },
     videos: {
@@ -207,10 +207,10 @@ export const translations = {
     },
     about: {
       title: "¿QUIÉN ES OG.MKS?",
-      subtitle: "¡LA VIVENCIA PERIFÉRICA EN FORMA DE SONIDO!",
-      p1: "Con más de 50 mil reproducciones en plataformas digitales y decenas de lanzamientos en la calle, OG.MKS es la prueba de que el underground paulista sigue más fuerte que nunca.",
-      p2: "Nacido en Jardim Brasil, carga la experiencia de quien ya compartió escenario en centros culturales de peso, como el CCJ y la Casa de Cultura Brasilândia, además de romperla en el circuito callejero.",
-      p3: 'Entre temas como "Clack Clack" e "Os Menor do Momento", su sonido es un retrato crudo de la vivencia periférica.',
+      subtitle: "¡DE LA ZONA NORTE A LA ESCENA DEL TRAP NACIONAL!",
+      p1: "OG.MKS es un rapero y compositor independiente de São Paulo que transforma vivencias, ambición y estilo de vida en música. Con lanzamientos como “Resumo”, “Refs” y “Faturando”, el artista presenta una sonoridad versátil que combina cultura urbana, autenticidad y actitud.",
+      p2: "Su trayectoria carga el peso de haber compartido escenario en centros culturales de renombre (CCJ, Casa de Cultura Brasilândia), romperla en el circuito callejero y presentarse en la Virada Cultural de São Paulo en 2025, además de colaborar con referentes de la escena independiente.",
+      p3: "Con un repertorio que combina trap, flows potentes y la estética cruda de la calle, OG.MKS lleva al escenario la fuerza de sus canciones en un show centrado en la actitud, la identidad y la conexión total con el público.",
       ctaShow: "CONTRATAR SHOW",
     },
     videos: {

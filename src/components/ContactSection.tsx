@@ -29,6 +29,8 @@ export default function ContactSection({ currentLang = "PT" }: ContactSectionPro
     message: "",
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const t = translations[currentLang]?.contact || {
     ctaTitle: "LEVE O SHOW DO OG.MK$ PARA SEU EVENTO!",
     ctaSubtitle: "Disponível para Shows, Festivais, Feat e Presença VIP em todo o Brasil.",
@@ -42,25 +44,40 @@ export default function ContactSection({ currentLang = "PT" }: ContactSectionPro
     btnSend: "ENVIAR MENSAGEM",
   };
 
-  const WHATSAPP_MANAGER_NUMBER = "5511999999999";
+  const WHATSAPP_MANAGER_NUMBER = "5511975117122";
 
   const handleManagerClick = () => {
     const text = encodeURIComponent("Olá! Gostaria de orçar um show/evento do OG.MKS.");
     window.open(`https://wa.me/${WHATSAPP_MANAGER_NUMBER}?text=${text}`, "_blank");
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const mailtoSubject = encodeURIComponent(`Contato Site - ${formData.name}`);
-    const mailtoBody = encodeURIComponent(
-      `Nome: ${formData.name}\nE-mail: ${formData.email}\n\nMensagem:\n${formData.message}`
-    );
-    window.location.href = `mailto:contato@ogmks.com.br?subject=${mailtoSubject}&body=${mailtoBody}`;
+    setIsSubmitting(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        alert("Mensagem enviada com sucesso!");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        alert("Ocorreu um erro ao enviar. Tente novamente.");
+      }
+    } catch {
+      alert("Erro de conexão. Tente novamente.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <MotionConfig reducedMotion="user">
-      <section id="contact" className="relative w-full scroll-mt-24 text-white">
+      <section id="contato" className="relative w-full scroll-mt-24 text-white">
         
         {/* BLOCO SUPERIOR: BANNER VERMELHO DE SHOWS / BOOKING */}
         <div className="relative w-full bg-red-950/80 py-16 backdrop-blur-md sm:py-20 lg:py-24">
@@ -149,7 +166,7 @@ export default function ContactSection({ currentLang = "PT" }: ContactSectionPro
                   placeholder={t.placeholderName}
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="h-16 w-full rounded-md bg-white px-5 font-metropolis text-sm font-bold uppercase text-black placeholder:text-black/40 outline-none focus:ring-2 focus:ring-red-700 sm:text-base"
+                  className="h-16 w-full rounded-md bg-white px-5 font-metropolis text-sm font-bold text-black placeholder:text-black/40 outline-none focus:ring-2 focus:ring-red-700 sm:text-base"
                 />
                 <input
                   type="email"
@@ -157,7 +174,7 @@ export default function ContactSection({ currentLang = "PT" }: ContactSectionPro
                   placeholder={t.placeholderEmail}
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="h-16 w-full rounded-md bg-white px-5 font-metropolis text-sm font-bold uppercase text-black placeholder:text-black/40 outline-none focus:ring-2 focus:ring-red-700 sm:text-base"
+                  className="h-16 w-full rounded-md bg-white px-5 font-metropolis text-sm font-bold text-black placeholder:text-black/40 outline-none focus:ring-2 focus:ring-red-700 sm:text-base"
                 />
               </div>
 
@@ -168,14 +185,15 @@ export default function ContactSection({ currentLang = "PT" }: ContactSectionPro
                 placeholder={t.placeholderMessage}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="w-full min-h-[160px] rounded-md bg-white p-5 font-metropolis text-sm font-bold uppercase text-black placeholder:text-black/40 outline-none focus:ring-2 focus:ring-red-700 sm:text-base resize-y"
+                className="w-full min-h-[160px] rounded-md bg-white p-5 font-metropolis text-sm font-bold text-black placeholder:text-black/40 outline-none focus:ring-2 focus:ring-red-700 sm:text-base resize-y"
               />
 
               <button
                 type="submit"
-                className="h-16 w-full rounded-md bg-red-700 font-metropolis text-lg font-black uppercase tracking-wider text-white shadow-lg transition-transform duration-300 hover:bg-red-800 hover:scale-[1.01] active:scale-[0.99] sm:text-2xl"
+                disabled={isSubmitting}
+                className="h-16 w-full rounded-md bg-red-700 font-metropolis text-lg font-black uppercase tracking-wider text-white shadow-lg transition-all duration-300 hover:bg-red-800 hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50 disabled:cursor-not-allowed sm:text-2xl"
               >
-                {t.btnSend}
+                {isSubmitting ? "ENVIANDO..." : t.btnSend}
               </button>
             </motion.form>
 

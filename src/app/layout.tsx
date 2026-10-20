@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import SmoothScroll from "@/components/SmoothScroll";
 import "./globals.css";
 
 const franklinGothic = localFont({
@@ -37,6 +38,33 @@ const metropolis = localFont({
 export const metadata: Metadata = {
   title: "OG.MK$ | Trap, Drill & Lifestyle",
   description: "A vivência periférica em forma de som. Do Jardim Brasil pro mundo!",
+  icons: {
+    icon: "/assets/icons/OG-MKS-LOGO-FAVICON.png",
+    shortcut: "/assets/icons/OG-MKS-LOGO-FAVICON.png",
+    apple: "/assets/icons/OG-MKS-LOGO-FAVICON.png",
+  },
+  openGraph: {
+    title: "OG.MK$ | Trap, Drill & Lifestyle",
+    description: "A vivência periférica em forma de som. Do Jardim Brasil pro mundo!",
+    url: "https://ogmks.com.br",
+    siteName: "OG.MK$",
+    images: [
+      {
+        url: "/assets/images/herosection-photo-mks.webp",
+        width: 1200,
+        height: 630,
+        alt: "OG.MK$ | Trap, Drill & Lifestyle",
+      },
+    ],
+    locale: "pt_BR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "OG.MK$ | Trap, Drill & Lifestyle",
+    description: "A vivência periférica em forma de som. Do Jardim Brasil pro mundo!",
+    images: ["/assets/images/herosection-photo-mks.webp"],
+  },
 };
 
 export default function RootLayout({
@@ -54,7 +82,7 @@ export default function RootLayout({
         className="bg-black text-white antialiased font-metropolis selection:bg-brand-red selection:text-white"
         suppressHydrationWarning
       >
-        {children}
+        <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
   );

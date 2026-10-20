@@ -105,7 +105,7 @@ export default function VideoSection({ currentLang = "PT" }: VideoSectionProps) 
   return (
     <MotionConfig reducedMotion="user">
       <section
-        id="videos"
+        id="clipes"
         className="relative w-full scroll-mt-24 bg-transparent py-16 text-white sm:py-20 lg:py-24"
       >
         <div className="mx-auto flex w-full max-w-[1280px] flex-col items-center gap-10 px-4 sm:px-8 xl:px-0">
