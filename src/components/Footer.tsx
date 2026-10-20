@@ -14,7 +14,7 @@ import {
   FaArrowRight,
   FaMapMarkerAlt,
 } from "react-icons/fa";
-import { SiDeezer, SiSoundcloud } from "react-icons/si";
+import { SiDeezer, SiSoundcloud, SiBandcamp } from "react-icons/si";
 import { translations, Language } from "@/data/translations";
 
 interface FooterProps {
@@ -58,14 +58,15 @@ export default function Footer({ currentLang = "PT" }: FooterProps) {
   };
 
   const SOCIAL_LINKS = [
-    { icon: FaInstagram, href: "https://instagram.com/og.mks", label: "Instagram" },
-    { icon: FaFacebookF, href: "https://facebook.com/ogmks", label: "Facebook" },
-    { icon: FaYoutube, href: "https://youtube.com/@ogmks", label: "YouTube" },
-    { icon: FaTiktok, href: "https://tiktok.com/@ogmks", label: "TikTok" },
-    { icon: FaSpotify, href: "https://open.spotify.com/artist/ogmks", label: "Spotify" },
-    { icon: FaApple, href: "https://music.apple.com/artist/ogmks", label: "Apple Music" },
-    { icon: SiDeezer, href: "https://deezer.com/artist/ogmks", label: "Deezer" },
+    { icon: FaInstagram, href: "https://www.instagram.com/og.mks/", label: "Instagram" },
+    { icon: FaFacebookF, href: "https://www.facebook.com/profile.php?id=61555820352885", label: "Facebook" },
+    { icon: FaYoutube, href: "https://www.youtube.com/@ogmksoficial", label: "YouTube" },
+    { icon: FaTiktok, href: "https://www.tiktok.com/@ogmksoficial", label: "TikTok" },
+    { icon: FaSpotify, href: "https://open.spotify.com/intl-pt/artist/48AEM4B9bMRXgT4dXqero6?si=tZWohiUJQMWnXoMM62z6cQ", label: "Spotify" },
+    { icon: FaApple, href: "https://music.apple.com/br/artist/og-mks/1595159403", label: "Apple Music" },
+    { icon: SiDeezer, href: "https://www.deezer.com/en/artist/151324012", label: "Deezer" },
     { icon: SiSoundcloud, href: "https://soundcloud.com/ogmks", label: "SoundCloud" },
+    { icon: SiBandcamp, href: "https://ogmks.bandcamp.com/album/resumo", label: "Bandcamp" },
   ];
 
   const NAV_LINKS = [
@@ -135,7 +136,7 @@ export default function Footer({ currentLang = "PT" }: FooterProps) {
               </div>
 
               {/* REDES SOCIAIS */}
-              <div className="grid grid-cols-4 gap-2.5 sm:flex sm:flex-wrap sm:justify-center lg:justify-start lg:gap-3 pt-1">
+              <div className="grid grid-cols-5 gap-2.5 sm:flex sm:flex-wrap sm:justify-center lg:justify-start lg:gap-3 pt-1">
                 {SOCIAL_LINKS.map((item, idx) => {
                   const Icon = item.icon;
                   return (
