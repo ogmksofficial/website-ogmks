@@ -14,7 +14,7 @@ import {
   FaArrowRight,
   FaMapMarkerAlt,
 } from "react-icons/fa";
-import { SiDeezer, SiSoundcloud, SiBandcamp } from "react-icons/si";
+import { SiDeezer, SiSoundcloud, SiBandcamp, SiYoutubemusic } from "react-icons/si";
 import { translations, Language } from "@/data/translations";
 
 interface FooterProps {
@@ -57,10 +57,12 @@ export default function Footer({ currentLang = "PT" }: FooterProps) {
     contact: "CONTATO",
   };
 
+  // 10 ícones = grid 5x2 simétrico
   const SOCIAL_LINKS = [
     { icon: FaInstagram, href: "https://www.instagram.com/og.mks/", label: "Instagram" },
     { icon: FaFacebookF, href: "https://www.facebook.com/profile.php?id=61555820352885", label: "Facebook" },
     { icon: FaYoutube, href: "https://www.youtube.com/@ogmksoficial", label: "YouTube" },
+    { icon: SiYoutubemusic, href: "https://music.youtube.com/channel/UCTNZs5DwoHHFM_nbgI5iv9Q", label: "YouTube Music" },
     { icon: FaTiktok, href: "https://www.tiktok.com/@ogmksoficial", label: "TikTok" },
     { icon: FaSpotify, href: "https://open.spotify.com/intl-pt/artist/48AEM4B9bMRXgT4dXqero6?si=tZWohiUJQMWnXoMM62z6cQ", label: "Spotify" },
     { icon: FaApple, href: "https://music.apple.com/br/artist/og-mks/1595159403", label: "Apple Music" },
@@ -84,7 +86,7 @@ export default function Footer({ currentLang = "PT" }: FooterProps) {
     "https://maps.google.com/?q=R.+Bas%C3%ADlio+Alves+Morango,+933+-+Jardim+Brasil,+S%C3%A3o+Paulo+-+SP,+02222-001";
 
   const WHATSAPP_MANAGER_URL =
-    "https://wa.me/5511975117122?text=Ol%C3%A1!%20Gostaria%20de%20or%C3%A7ar%20um%20show%20do%20OG.MKS.";
+    "https://wa.me/5511992436369?text=Ol%C3%A1!%20Gostaria%20de%20or%C3%A7ar%20um%20show%20do%20OG.MKS.";
 
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith("#")) {
@@ -135,8 +137,8 @@ export default function Footer({ currentLang = "PT" }: FooterProps) {
                 />
               </div>
 
-              {/* REDES SOCIAIS */}
-              <div className="grid grid-cols-5 gap-2.5 sm:flex sm:flex-wrap sm:justify-center lg:justify-start lg:gap-3 pt-1">
+              {/* REDES SOCIAIS: GRID FIXO 5x2 */}
+              <div className="grid w-fit grid-cols-5 gap-2.5 pt-1 mx-auto lg:mx-0 lg:gap-3">
                 {SOCIAL_LINKS.map((item, idx) => {
                   const Icon = item.icon;
                   return (
@@ -212,7 +214,7 @@ export default function Footer({ currentLang = "PT" }: FooterProps) {
                   className="flex items-center gap-2.5 font-metropolis text-sm font-semibold text-white/90 transition-colors hover:text-red-500 lg:text-base xl:text-lg"
                 >
                   <FaWhatsapp className="h-5 w-5 shrink-0 text-green-500" />
-                  <span>Marcos Alexandre — 11 97511-7122</span>
+                  <span>Marcos Alexandre — 11 99243-6369</span>
                 </a>
               </div>
 

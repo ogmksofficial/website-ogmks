@@ -10,73 +10,70 @@ interface AboutSectionProps {
 }
 
 export default function AboutSection({ currentLang = "PT" }: AboutSectionProps) {
-  // Puxa as traduções dinâmicas de acordo com o idioma ativo
   const t = translations[currentLang]?.about || translations.PT.about;
-
-  const WHATSAPP_MANAGER_URL =
-    "https://wa.me/5511975117122?text=Ol%C3%A1!%20Gostaria%20de%20or%C3%A7ar%20um%20show%20do%20OG.MKS.";
+  const WHATSAPP_NUMBER = "5511992436369";
 
   return (
     <section
       id="sobre"
-      className="relative w-full min-h-fit lg:min-h-screen pt-10 pb-16 lg:pt-24 lg:pb-0 px-6 sm:px-12 flex items-center lg:items-end justify-center overflow-hidden bg-transparent text-white"
+      className="relative w-full pt-6 lg:pt-12 pb-0 px-4 sm:px-8 lg:px-12 flex items-end justify-center overflow-hidden bg-transparent text-white"
     >
-      <div className="max-w-[1550px] w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <div className="max-w-[1440px] w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-end">
 
-        {/* COLUNA ESQUERDA: FOTO IMPONENTE DO ARTISTA */}
+        {/* COLUNA ESQUERDA: FOTO DO ARTISTA (Colada 100% na borda inferior) */}
         <motion.div
-          initial={{ opacity: 0, x: -60 }}
+          initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="order-1 lg:order-1 lg:col-span-6 xl:col-span-6 flex justify-center items-end relative h-[320px] sm:h-[450px] lg:h-[780px] xl:h-[860px] w-full overflow-visible"
+          className="order-1 lg:order-1 lg:col-span-6 flex justify-center items-end relative h-[400px] sm:h-[500px] lg:h-[600px] xl:h-[680px] w-full overflow-hidden"
         >
-          <div className="relative w-full h-full max-w-[450px] lg:max-w-none flex items-end justify-center lg:justify-start lg:-translate-x-8 xl:-translate-x-12 transition-transform">
+          <div className="relative w-full h-full max-w-[480px] lg:max-w-none flex items-end justify-center lg:justify-start">
             <Image
               src="/assets/images/og-mks-photo-about.webp"
               alt="OG.MK$ no microfone"
               fill
               priority={false}
-              sizes="(max-width: 1024px) 100vw, 55vw"
-              className="object-contain object-bottom lg:object-left-bottom scale-105 sm:scale-110 lg:scale-120 xl:scale-125 origin-bottom lg:origin-bottom-left drop-shadow-[0_20px_35px_rgba(0,0,0,0.95)] filter brightness-105"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-contain object-bottom lg:object-left-bottom scale-100 sm:scale-105 lg:scale-110 origin-bottom lg:origin-bottom-left drop-shadow-[0_20px_35px_rgba(0,0,0,0.95)] filter brightness-105"
             />
           </div>
         </motion.div>
 
-        {/* COLUNA DIREITA: CONTEÚDO DINÂMICO */}
+        {/* COLUNA DIREITA: TEXTO E BOTAO (Alinhados com respiro adequado) */}
         <motion.div
-          initial={{ opacity: 0, x: 60 }}
+          initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-          className="order-2 lg:order-2 lg:col-span-6 xl:col-span-6 flex flex-col items-center lg:items-end text-center lg:text-right z-10"
+          className="order-2 lg:order-2 lg:col-span-6 flex flex-col items-center lg:items-end text-center lg:text-right z-10 pb-8 lg:pb-12"
         >
           {/* TÍTULO PRINCIPAL */}
-          <h2 className="text-white text-4xl sm:text-6xl xl:text-7xl font-black font-franklin uppercase tracking-tight [text-shadow:_0px_4px_9px_rgb(0_0_0_/_0.55)] leading-none">
+          <h2 className="text-white text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-black font-franklin uppercase tracking-tight drop-shadow-md leading-none">
             {t.title}
           </h2>
 
-          {/* SUBTÍTULO */}
-          <h3 className="mt-3 sm:mt-4 text-white text-base sm:text-2xl font-medium font-metropolis uppercase tracking-wide text-zinc-200">
+          {/* SUBTÍTULO VERMELHO */}
+          <h3 className="mt-2 sm:mt-3 text-red-600 text-xs sm:text-lg lg:text-xl font-black font-metropolis uppercase tracking-wider">
             {t.subtitle}
           </h3>
 
-          {/* PARÁGRAFOS APROVADOS */}
-          <div className="mt-6 sm:mt-8 space-y-4 sm:space-y-6 text-zinc-300 text-sm sm:text-xl lg:text-2xl font-normal font-metropolis leading-relaxed max-w-[640px]">
+          {/* PARÁGRAFOS */}
+          <div className="mt-4 sm:mt-6 space-y-3 sm:space-y-4 text-zinc-300 text-xs sm:text-base lg:text-lg font-normal font-metropolis leading-relaxed max-w-[580px]">
             <p>{t.p1}</p>
             <p>{t.p2}</p>
             <p>{t.p3}</p>
           </div>
 
-          {/* BOTÃO CTA CONTRATE O SHOW */}
-          <div className="mt-8 sm:mt-10 flex justify-center lg:justify-end w-full">
+          {/* BOTÃO CTA */}
+          <div className="mt-6 sm:mt-8 flex justify-center lg:justify-end w-full">
             <a
-              href={WHATSAPP_MANAGER_URL}
+              href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Olá! Gostaria de orçar um show do OG.MKS.")}`}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-3 bg-[#B30000] hover:bg-red-600 text-white font-metropolis font-bold uppercase tracking-wider px-7 py-3.5 sm:px-8 sm:py-4 rounded-xl shadow-[0_4px_20px_rgba(179,0,0,0.4)] hover:shadow-[0_4px_25px_rgba(239,68,68,0.6)] transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]"
+              className="inline-flex items-center gap-3 bg-red-700 hover:bg-red-800 text-white font-metropolis font-black uppercase tracking-wider px-6 py-3.5 sm:px-8 sm:py-4 text-xs sm:text-sm rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
             >
-              <FaWhatsapp className="w-5 h-5 sm:w-6 sm:h-6 shrink-0" />
+              <FaWhatsapp className="w-5 h-5 shrink-0" />
               <span>{t.ctaShow}</span>
             </a>
           </div>

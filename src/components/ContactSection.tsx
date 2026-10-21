@@ -44,11 +44,11 @@ export default function ContactSection({ currentLang = "PT" }: ContactSectionPro
     btnSend: "ENVIAR MENSAGEM",
   };
 
-  const WHATSAPP_MANAGER_NUMBER = "5511975117122";
+  const WHATSAPP_NUMBER = "5511992436369";
 
   const handleManagerClick = () => {
     const text = encodeURIComponent("Olá! Gostaria de orçar um show/evento do OG.MKS.");
-    window.open(`https://wa.me/${WHATSAPP_MANAGER_NUMBER}?text=${text}`, "_blank");
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, "_blank");
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -83,7 +83,7 @@ export default function ContactSection({ currentLang = "PT" }: ContactSectionPro
         <div className="relative w-full bg-red-950/80 py-16 backdrop-blur-md sm:py-20 lg:py-24">
           <div className="mx-auto flex w-full max-w-[1280px] flex-col items-center gap-10 px-4 lg:flex-row lg:justify-between sm:px-8 xl:px-0">
             
-            {/* TEXTOS + BOTÃO MANAGER */}
+            {/* TEXTOS + BOTÃO ÚNICO DO MANAGER */}
             <motion.div
               initial="hidden"
               whileInView="show"
@@ -104,7 +104,7 @@ export default function ContactSection({ currentLang = "PT" }: ContactSectionPro
                   onClick={handleManagerClick}
                   className="flex h-16 items-center justify-center gap-3 rounded-3xl border-4 border-black bg-zinc-200 px-8 font-metropolis text-lg font-black uppercase text-black shadow-xl transition-transform duration-300 hover:scale-105 active:scale-95 sm:h-20 sm:text-2xl"
                 >
-                  <FaWhatsapp className="h-8 w-8 text-black" />
+                  <FaWhatsapp className="h-8 w-8 text-black shrink-0" />
                   <span>{t.btnManager}</span>
                 </button>
               </div>
@@ -122,8 +122,9 @@ export default function ContactSection({ currentLang = "PT" }: ContactSectionPro
                 src="/assets/images/contatosection-photo-mks.webp"
                 alt="OG.MKS Contact Photo"
                 fill
+                priority
                 sizes="(min-width: 1024px) 560px, 90vw"
-                className="object-cover object-top"
+                className="object-cover object-center"
               />
             </motion.div>
 
@@ -178,7 +179,7 @@ export default function ContactSection({ currentLang = "PT" }: ContactSectionPro
                 />
               </div>
 
-              {/* TEXTAREA DIMENSIONÁVEL NA VERTICAL (resize-y) */}
+              {/* TEXTAREA DIMENSIONÁVEL NA VERTICAL */}
               <textarea
                 required
                 rows={5}

@@ -54,7 +54,7 @@ const VIDEOS_DATA: VideoItem[] = [
   {
     id: "sinal-da-firma",
     youtubeId: "5Jupyk5GXT0",
-    title: "Sem Risadinha",
+    title: "Sinal da Firma",
     duration: "3:30",
   },
 ];
@@ -152,7 +152,7 @@ export default function VideoSection({ currentLang = "PT" }: VideoSectionProps) 
                   className="group relative h-full w-full cursor-pointer"
                 >
                   <Image
-                    src={`https://img.youtube.com/vi/${selectedVideo.youtubeId}/hqdefault.jpg`}
+                    src={`https://img.youtube.com/vi/${selectedVideo.youtubeId}/maxresdefault.jpg`}
                     alt={selectedVideo.title}
                     fill
                     priority
@@ -235,7 +235,7 @@ export default function VideoSection({ currentLang = "PT" }: VideoSectionProps) 
                     }`}
                   >
                     <Image
-                      src={`https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`}
+                      src={`https://img.youtube.com/vi/${video.youtubeId}/mqdefault.jpg`}
                       alt={video.title}
                       fill
                       unoptimized

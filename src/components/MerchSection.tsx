@@ -13,8 +13,8 @@ export interface MerchItem {
 
 const MERCH_PRODUCTS: MerchItem[] = [
   {
-    id: "camiseta-long-size",
-    name: "Camiseta Long Size OG.MK$",
+    id: "camiseta-oversized",
+    name: "Camiseta Oversized OG.MK$",
     image: "/assets/images/merch-camiseta.webp",
   },
   {
@@ -68,7 +68,7 @@ export default function MerchSection({ currentLang = "PT" }: MerchSectionProps) 
   };
 
   // Número de WhatsApp configurado (substitua pelo oficial do artista/comercial)
-  const WHATSAPP_NUMBER = "5511999999999";
+  const WHATSAPP_NUMBER = "5511992436369";
 
   const getWhatsappUrl = (productName: string) => {
     const text = encodeURIComponent(`${t.whatsappMessage}${productName}`);
@@ -140,7 +140,7 @@ export default function MerchSection({ currentLang = "PT" }: MerchSectionProps) 
                     href={getWhatsappUrl(product.name)}
                     target="_blank"
                     rel="noreferrer"
-                    aria-label={`${t.cta} - ${product.name}`}
+                    aria-label={`${t.cta} ${product.name}`}
                     className="flex h-14 w-full items-center justify-center gap-2.5 rounded-xl bg-red-800 px-4 font-metropolis text-base font-black uppercase text-white shadow-lg shadow-red-900/30 transition-all duration-300 hover:bg-red-700 hover:scale-[1.02] active:scale-[0.98]"
                   >
                     <FaWhatsapp className="h-6 w-6 shrink-0" />
