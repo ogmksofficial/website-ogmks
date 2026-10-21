@@ -20,20 +20,14 @@ const SPARKS = Array.from({ length: 16 }, (_, i) => ({
 }));
 
 export default function HeroSection({ currentLang = "PT" }: HeroSectionProps) {
-  const t = translations[currentLang]?.hero || {
-    tagline: "TRAP · RAP · DETROIT · LIFESTYLE",
-    ctaShow: "CONTRATE O SHOW",
-    ctaRelease: "ÚLTIMO LANÇAMENTO",
-  };
-
+  const t = translations[currentLang]?.hero || translations.PT.hero;
   const reduceMotion = useReducedMotion();
+
   const WHATSAPP_NUMBER = "5511992436369";
 
   const handleWhatsappShow = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    const text = encodeURIComponent(
-      "Olá! Vim pelo site do OG.MK$ e gostaria de informações sobre contratação de shows e eventos."
-    );
+    const text = encodeURIComponent("Olá! Vim pelo site do OG.MK$ e gostaria de informações sobre contratação de shows e eventos.");
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, "_blank", "noopener,noreferrer");
   };
 
@@ -62,19 +56,15 @@ export default function HeroSection({ currentLang = "PT" }: HeroSectionProps) {
               priority
               quality={90}
               sizes="100vw"
-              className="object-cover object-[55%_top] lg:object-[70%_20%] opacity-100 filter brightness-105 contrast-105"
+              className="object-cover object-[57%_top] lg:object-[70%_20%] opacity-90 filter brightness-105 contrast-105"
             />
           </motion.div>
         </motion.div>
 
-        {/* GRADIENTE DESKTOP */}
+        {/* GRADIENTES */}
         <div className="absolute inset-0 hidden lg:block bg-gradient-to-r from-black/95 via-black/60 to-transparent" />
-        
-        {/* GRADIENTE MOBILE (SUAVE PARA NÃO ESCONDER A FOTO) */}
-        <div className="absolute inset-0 lg:hidden bg-gradient-to-t from-black/90 via-black/30 to-black/10" />
-        
-        {/* GRADIENTE DE BASE DESKTOP */}
-        <div className="absolute inset-0 hidden lg:block bg-gradient-to-t from-black/90 via-transparent to-black/30" />
+        <div className="absolute inset-0 lg:hidden bg-gradient-to-t from-black/40 via-black/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/30" />
 
         {/* BRILHO VERMELHO */}
         <motion.div
@@ -112,20 +102,20 @@ export default function HeroSection({ currentLang = "PT" }: HeroSectionProps) {
         </div>
       </div>
 
-      {/* CONTEÚDO CENTRALIZADO NO MOBILE / ALINHADO À ESQUERDA NO DESKTOP */}
+      {/* CONTEÚDO */}
       <div className="relative z-10 max-w-7xl w-full mx-auto flex flex-col justify-end lg:justify-center min-h-[75vh]">
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-          className="flex flex-col items-center text-center lg:items-start lg:text-left w-full sm:w-fit"
+          className="flex flex-col items-start text-left w-full sm:w-fit"
         >
           {/* TÍTULO PRINCIPAL */}
           <h1 className="font-franklin font-black text-[length:min(calc((100vw_-_2rem)/3.6),8rem)] sm:text-9xl md:text-[165px] uppercase tracking-tight text-white leading-none drop-shadow-2xl">
             OG.MK$
           </h1>
 
-          {/* SUBTÍTULO CENTRALIZADO */}
+          {/* SUBTÍTULO */}
           <p className="mt-3 font-metropolis text-[length:min(calc((100vw_-_2rem)/21.5),1.5rem)] sm:text-2xl font-black uppercase whitespace-nowrap tracking-[0.08em] sm:tracking-[0.2em] text-white/95">
             {t.tagline}
           </p>
@@ -144,7 +134,7 @@ export default function HeroSection({ currentLang = "PT" }: HeroSectionProps) {
             </a>
 
             <a
-              href="#lancamentos"
+              href="#releases"
               className="w-full sm:flex-1 flex items-center justify-center gap-3 whitespace-nowrap px-6 py-5 bg-slate-900/90 hover:bg-slate-800 border border-slate-700/60 text-white font-metropolis text-sm font-black uppercase tracking-wide rounded-sm transition-all duration-300 transform hover:-translate-y-0.5 shadow-xl"
             >
               <PlayCircle size={24} className="shrink-0 text-white/80" aria-hidden="true" />
