@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import SmoothScroll from "@/components/SmoothScroll";
+import SchemaMarkup from "@/components/SchemaMarkup";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import "./globals.css";
 
 const franklinGothic = localFont({
@@ -35,16 +37,14 @@ const metropolis = localFont({
   variable: "--font-metropolis-src",
 });
 
-const SITE_URL = "https://website-ogmks.vercel.app";
+const SITE_URL = "https://www.ogmks.com.br";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "OG.MK$ | Trap, Drill & Lifestyle",
   description: "A vivência periférica em forma de som. Do Jardim Brasil pro mundo!",
-  icons: {
-    icon: "/assets/icons/OG-MKS-LOGO-FAVICON.png",
-    shortcut: "/assets/icons/OG-MKS-LOGO-FAVICON.png",
-    apple: "/assets/icons/OG-MKS-LOGO-FAVICON.png",
+  verification: {
+    google: "ZmkMHoNO7yoWNE8MLsJ7e967EvyChOvagOi_jZ8MLY8",
   },
   openGraph: {
     title: "OG.MK$ | Trap, Drill & Lifestyle",
@@ -73,19 +73,23 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: Readonly<React.ReactNode>;
 }>) {
   return (
     <html
-      lang="pt"
+      lang="pt-BR"
       className={`${franklinGothic.variable} ${metropolis.variable}`}
       suppressHydrationWarning
     >
+      <head>
+        <SchemaMarkup />
+      </head>
       <body
         className="bg-black text-white antialiased font-metropolis selection:bg-brand-red selection:text-white"
         suppressHydrationWarning
       >
         <SmoothScroll>{children}</SmoothScroll>
+        <GoogleAnalytics />
       </body>
     </html>
   );
