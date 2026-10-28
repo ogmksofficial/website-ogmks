@@ -43,6 +43,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "OG.MK$ | Trap, Drill & Lifestyle",
   description: "A vivência periférica em forma de som. Do Jardim Brasil pro mundo!",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
   verification: {
     google: "ZmkMHoNO7yoWNE8MLsJ7e967EvyChOvagOi_jZ8MLY8",
   },
