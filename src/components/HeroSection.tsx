@@ -31,13 +31,23 @@ export default function HeroSection({ currentLang = "PT" }: HeroSectionProps) {
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, "_blank", "noopener,noreferrer");
   };
 
+  const scrollToReleases = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const element = document.getElementById("lancamentos") || document.getElementById("releases") || document.querySelector("section[id*='release']");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      window.location.hash = "lancamentos";
+    }
+  };
+
   return (
     <section id="home" className="relative min-h-screen w-full flex items-center justify-center pt-28 pb-16 px-4 sm:px-6 overflow-hidden bg-black">
       
       {/* CAMADA DE FUNDO */}
       <div aria-hidden="true" className="absolute inset-0 w-full h-full z-0 pointer-events-none select-none">
         
-        {/* FOTO DO ARTISTA (DESLOCADA ~20PX MAIS PARA A DIREITA NO DESKTOP) */}
+        {/* FOTO DO ARTISTA */}
         <motion.div
           initial={{ opacity: 0, x: 40, scale: 1.02 }}
           animate={{ opacity: 1, x: 0, scale: 1 }}
@@ -115,8 +125,13 @@ export default function HeroSection({ currentLang = "PT" }: HeroSectionProps) {
             OG.MK$
           </h1>
 
+          {/* VULGO / AKA — CENTRALIZADO E HARMONIZADO */}
+          <p className="mt-2 w-full text-center font-metropolis text-sm sm:text-lg md:text-xl font-bold uppercase tracking-[0.22em] sm:tracking-[0.32em] text-red-500 drop-shadow-[0_2px_8px_rgba(220,38,38,0.3)]">
+            {t.aka}
+          </p>
+
           {/* SUBTÍTULO ALINHADO */}
-          <p className="mt-3 w-full font-metropolis text-[length:min(calc((100vw_-_2rem)/20.8),1.55rem)] sm:text-[1.65rem] md:text-[1.75rem] font-black uppercase whitespace-nowrap tracking-[0.09em] sm:tracking-[0.205em] -ml-[2px] sm:-ml-[3px] text-white/95">
+          <p className="mt-2 w-full text-left font-metropolis text-[length:min(calc((100vw_-_2rem)/20.8),1.55rem)] sm:text-[1.65rem] md:text-[1.75rem] font-black uppercase whitespace-nowrap tracking-[0.09em] sm:tracking-[0.205em] -ml-[2px] sm:-ml-[3px] text-white/95">
             {t.tagline}
           </p>
 
@@ -134,7 +149,8 @@ export default function HeroSection({ currentLang = "PT" }: HeroSectionProps) {
             </a>
 
             <a
-              href="#releases"
+              href="#lancamentos"
+              onClick={scrollToReleases}
               className="flex-1 flex items-center justify-center gap-3 whitespace-nowrap px-6 py-5 bg-slate-900/90 hover:bg-slate-800 border border-slate-700/60 text-white font-metropolis text-sm font-black uppercase tracking-wide rounded-sm transition-all duration-300 transform hover:-translate-y-0.5 shadow-xl"
             >
               <PlayCircle size={24} className="shrink-0 text-white/80" aria-hidden="true" />

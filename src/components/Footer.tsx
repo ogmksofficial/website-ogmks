@@ -214,7 +214,7 @@ export default function Footer({ currentLang = "PT" }: FooterProps) {
                   className="flex items-center gap-2.5 font-metropolis text-sm font-semibold text-white/90 transition-colors hover:text-red-500 lg:text-base xl:text-lg"
                 >
                   <FaWhatsapp className="h-5 w-5 shrink-0 text-green-500" />
-                  <span>Marcos Alexandre — 11 99243-6369</span>
+                  <span>Assessoria — 11 99243-6369</span>
                 </a>
               </div>
 

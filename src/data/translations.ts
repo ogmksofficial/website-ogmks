@@ -1,6 +1,103 @@
 export type Language = "PT" | "EN" | "ES";
 
-export const translations = {
+export interface HeroTranslations {
+  aka: string;
+  tagline: string;
+  ctaShow: string;
+  ctaRelease: string;
+}
+
+export interface TranslationSchema {
+  nav: {
+    home: string;
+    about: string;
+    releases: string;
+    clips: string;
+    agenda: string;
+    merch: string;
+    presskit: string;
+    contact: string;
+  };
+  hero: HeroTranslations;
+  release: {
+    title: string;
+    subtitle: string;
+    coverAlt: string;
+    listen: string;
+  };
+  about: {
+    title: string;
+    subtitle: string;
+    p1: string;
+    p2: string;
+    p3: string;
+    ctaShow: string;
+  };
+  videos: {
+    title: string;
+    subtitle: string;
+    playPrompt: string;
+    scrollLeft: string;
+    scrollRight: string;
+  };
+  agenda: {
+    title: string;
+    subtitle: string;
+    upcoming: string;
+    past: string;
+    freeTicket: string;
+    atDoor: string;
+    soldOut: string;
+  };
+  merch: {
+    tag: string;
+    title: string;
+    subtitle: string;
+    cta: string;
+    disclaimer: string;
+    whatsappMessage: string;
+  };
+  presskit: {
+    tag: string;
+    title: string;
+    description: string;
+    genres: string;
+    definition: string;
+    stat1Num: string;
+    stat1Label: string;
+    stat2Num: string;
+    stat2Label: string;
+    stat3Num: string;
+    stat3Label: string;
+    btnPresskit: string;
+    btnPhotos: string;
+    btnLogo: string;
+    btnVideos: string;
+  };
+  contact: {
+    ctaTitle: string;
+    ctaSubtitle: string;
+    btnManager: string;
+    formTitle: string;
+    formDescription: string;
+    placeholderName: string;
+    placeholderEmail: string;
+    placeholderMessage: string;
+    btnSend: string;
+  };
+  footer: {
+    tagline: string;
+    contactTitle: string;
+    prodTitle: string;
+    prodDesc: string;
+    address: string;
+    seeMaps: string;
+    ctaShow: string;
+    copyright: string;
+  };
+}
+
+export const translations: Record<Language, TranslationSchema> = {
   PT: {
     nav: {
       home: "HOME",
@@ -13,6 +110,7 @@ export const translations = {
       contact: "CONTATO",
     },
     hero: {
+      aka: "VULGO (DOIS BIGODE)",
       tagline: "TRAP · RAP · DETROIT · LIFESTYLE",
       ctaShow: "CONTRATE O SHOW",
       ctaRelease: "ÚLTIMO LANÇAMENTO",
@@ -26,9 +124,9 @@ export const translations = {
     about: {
       title: "QUEM É OG.MK$?",
       subtitle: "DA ZONA NORTE PARA A CENA DO TRAP NACIONAL!",
-      p1: "OG.MK$ é um rapper e compositor independente de São Paulo que transforma vivências, ambição e lifestyle em música, construindo sua identidade na cena do trap nacional.",
+      p1: "OG.MK$ CONHECIDO COMO 'DOIS BIGODE' é um rapper e compositor independente de São Paulo que transforma vivências, ambição e lifestyle em música, construindo sua identidade na cena do trap nacional.",
       p2: "Com lançamentos como “Resumo”, “Refs” e “Faturando”, o artista apresenta uma sonoridade versátil, combinando referências da cultura urbana, autenticidade e atitude.",
-      p3: "Sua trajetória includes participação na Virada Cultural de São Paulo, em 2025, além de colaborações com artistas da cena independente, fortalecendo sua presença no rap.",
+      p3: "Sua trajetória inclui participação na Virada Cultural de São Paulo, em 2025, além de colaborações com artistas da cena independente, fortalecendo sua presença no rap.",
       ctaShow: "CONTRATE O SHOW",
     },
     videos: {
@@ -41,6 +139,8 @@ export const translations = {
     agenda: {
       title: "AGENDA DE SHOWS",
       subtitle: "Próximos Eventos",
+      upcoming: "Próximos Shows",
+      past: "Shows Anteriores",
       freeTicket: "ENTRADA GRATUITA",
       atDoor: "INGRESSOS NA PORTA",
       soldOut: "ESGOTADO",
@@ -104,6 +204,7 @@ export const translations = {
       contact: "CONTACT",
     },
     hero: {
+      aka: "AKA (DOIS BIGODE)",
       tagline: "TRAP · RAP · DETROIT · LIFESTYLE",
       ctaShow: "BOOK A SHOW",
       ctaRelease: "LATEST RELEASE",
@@ -117,7 +218,7 @@ export const translations = {
     about: {
       title: "WHO IS OG.MK$?",
       subtitle: "FROM THE NORTH ZONE TO THE NATIONAL TRAP SCENE!",
-      p1: "OG.MK$ is an independent rapper and songwriter from São Paulo who turns real-life stories, ambition, and lifestyle into sound, building his identity in the national trap scene.",
+      p1: "OG.MK$ KNOWN AS 'DOIS BIGODE' is an independent rapper and songwriter from São Paulo who turns real-life stories, ambition, and lifestyle into sound, building his identity in the national trap scene.",
       p2: "With releases like “Resumo”, “Refs”, and “Faturando”, he delivers a versatile sonic identity blending street culture, authenticity, and raw attitude.",
       p3: "His journey includes performing at São Paulo's Virada Cultural in 2025, alongside key collaborations in the independent scene.",
       ctaShow: "BOOK A SHOW",
@@ -132,6 +233,8 @@ export const translations = {
     agenda: {
       title: "SHOW SCHEDULE",
       subtitle: "Upcoming Events",
+      upcoming: "Upcoming Shows",
+      past: "Past Shows",
       freeTicket: "FREE ADMISSION",
       atDoor: "TICKETS AT THE DOOR",
       soldOut: "SOLD OUT",
@@ -195,6 +298,7 @@ export const translations = {
       contact: "CONTACTO",
     },
     hero: {
+      aka: "AKA (DOIS BIGODE)",
       tagline: "TRAP · RAP · DETROIT · LIFESTYLE",
       ctaShow: "CONTRATAR SHOW",
       ctaRelease: "ÚLTIMO LANZAMIENTO",
@@ -208,7 +312,7 @@ export const translations = {
     about: {
       title: "¿QUIÉN ES OG.MK$?",
       subtitle: "¡DE LA ZONA NORTE A LA ESCENA DEL TRAP NACIONAL!",
-      p1: "OG.MK$ es un rapero y compositor independiente de São Paulo que transforma vivencias, ambición y estilo de vida en música, construyendo su identidad en la escena del trap nacional.",
+      p1: "OG.MK$ CONOCIDO COMO 'DOIS BIGODE' es un rapero y compositor independiente de São Paulo que transforma vivencias, ambición y estilo de vida en música, construyendo su identidad en la escena del trap nacional.",
       p2: "Con lanzamientos como “Resumo”, “Refs” y “Faturando”, el artista presenta una sonoridad versátil que combina cultura urbana, autenticidad y actitud.",
       p3: "Su trayectoria incluye su participación en la Virada Cultural de São Paulo en 2025, además de colaboraciones en la escena independiente.",
       ctaShow: "CONTRATAR SHOW",
@@ -223,6 +327,8 @@ export const translations = {
     agenda: {
       title: "AGENDA DE SHOWS",
       subtitle: "Próximos Eventos",
+      upcoming: "Próximos Shows",
+      past: "Shows Anteriores",
       freeTicket: "ENTRADA GRATUITA",
       atDoor: "ENTRADAS EN PUERTA",
       soldOut: "AGOTADO",
